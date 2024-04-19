@@ -46,3 +46,12 @@ jobs:
               uses: ./.github/actions/terraform-format
               with:
                 push: ${{ github.event_name == 'pull_request' || inputs.push }}
+
+    validate:
+        name: validate
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: check syntax
+              uses: ./.github/actions/terraform-validate
