@@ -13,4 +13,5 @@ This is a collection of GitHub actions and workflows our staff uses routinely.
 ## Workflow Inventory
 | Category | Item | Description |
 | ---- | ---- | ---- |
+| Releases | [Basic Release](.github/workflows/release.yml) | Example of issuing a basic release when a new tag is pushed. | 
 | Terraform | [Code Checks](.github/workflows/codeChecks.yml) | Example use for several of the actions listed above. | 
