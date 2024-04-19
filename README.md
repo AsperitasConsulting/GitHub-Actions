@@ -1,6 +1,6 @@
 # GitHub-Actions
 
-This is a collection of GitHub actions and workflows our staff uses routinely.
+This is a collection of GitHub actions and workflows our staff use routinely.
 
 ## Action Inventory
 
