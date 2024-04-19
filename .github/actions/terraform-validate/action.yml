@@ -19,5 +19,6 @@ runs:
       env:
         CONFIG: ${{ inputs.config }}
       run: |
+        export BASE_DIR=$(echo $PWD)
         echo "==> Validating Terraform syntax..."
-        find . -name '*.tf' | while read f; do dirname $f; done | sort -u | while read d; do ls ; cd $d ; terraform init -backend=false ; terraform validate; done
+        find . -name '*.tf' | while read f; do dirname $f; done | sort -u | while read d; do ls -l ; cd $d ; terraform init -backend=false ; terraform validate; cd $BASE_DIR ; done
