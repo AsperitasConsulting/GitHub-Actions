@@ -1,6 +1,6 @@
 author: D. Ashmore (Asperitas Consulting)
 name: Terraform Format
-description: Checks that documentation has been formatted according to Terraform standards
+description: Checks that code has been formatted according to Terraform standards
 inputs:
   push:
     description: 'Pushes formatting changes'
