@@ -8,31 +8,19 @@ This action will use the [Terraform validate](https://developer.hashicorp.com/te
 
 ## Example Workflow Usage
 ```yaml
-name: Code Formatting
+name: Code Syntax Check
 
 on:
     pull_request:
         types: ['opened', 'reopened', 'synchronize']
     workflow_dispatch:
-        inputs:
-            push:
-              description: Push documentation changes
-              required: true
-              type: boolean
-              default: true
 
 jobs:
     format:
-        name: format
+        name: syntax check
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-              if: ${{ github.event_name == 'pull_request'}}
-              with:
-                ref: ${{ github.event.pull_request.head.ref }}
-
-            - uses: actions/checkout@v4
-              if: ${{ github.event_name != 'pull_request'}}
 
             - name: Terraform Validate
               uses: AsperitasConsulting/GitHub-Actions/.github/actions/terraform-validate@v0.0.2
