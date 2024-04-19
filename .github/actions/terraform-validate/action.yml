@@ -14,10 +14,10 @@ runs:
       with:
         terraform_version: ${{ inputs.version }}
 
-    - name: Terraform formatting
+    - name: Terraform syntax check
       shell: bash
       env:
         CONFIG: ${{ inputs.config }}
       run: |
-        echo "==> Generating Terraform documentation..."
-        find . -name '*.tf' | while read f; do dirname $f; done | sort -u | while read d; do cd $d ; terraform init -backend=false ; terraform validate; done
+        echo "==> Validating Terraform syntax..."
+        find . -name '*.tf' | while read f; do dirname $f; done | sort -u | while read d; do ls ; cd $d ; terraform init -backend=false ; terraform validate; done
